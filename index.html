@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EdRAM — Germany Sales Strategy 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2044;
+    --navy-mid: #1a3260;
+    --gold: #b8952a;
+    --gold-light: #d4af5a;
+    --cream: #f5f2ec;
+    --slate: #8a9ab5;
+    --white: #ffffff;
+    --light-bg: #f0f3f8;
+    --text-dark: #0a1628;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0a0e1a;
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 16px 24px;
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,149,42,0.15);
+  }
+
+  nav a {
+    color: var(--slate);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  nav a:hover { color: var(--gold-light); background: rgba(184,149,42,0.08); }
+
+  /* SLIDES */
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 80px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* SLIDE 1 — COVER */
+  #slide1 {
+    background: var(--navy);
+    background-image:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(184,149,42,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 80% at 10% 80%, rgba(26,50,96,0.8) 0%, transparent 60%);
+  }
+
+  #slide1::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  }
+
+  .cover-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .cover-eyebrow::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(72px, 10vw, 120px);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+
+  .cover-title span {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .cover-subtitle {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--slate);
+    font-weight: 400;
+    margin-bottom: 80px;
+  }
+
+  .cover-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 80px;
+    opacity: 0.6;
+  }
+
+  .cover-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .team-names {
+    display: flex;
+    gap: 40px;
+  }
+
+  .team-name {
+    font-size: 12px;
+    color: var(--slate);
+    letter-spacing: 0.08em;
+  }
+
+  .cover-gold-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  /* SLIDE HEADER */
+  .slide-tag {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .slide-tag::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .slide-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 56px;
+    color: var(--white);
+  }
+
+  /* SLIDE 2 — CONTEXT */
+  #slide2 {
+    background: var(--cream);
+    color: var(--text-dark);
+  }
+
+  #slide2 .slide-tag { color: var(--gold); }
+  #slide2 .slide-title { color: var(--navy); }
+
+  #slide2::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(184,149,42,0.04) 0%, transparent 60%);
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 48px;
+  }
+
+  .kpi-card {
+    background: var(--white);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--navy);
+  }
+
+  .kpi-card:first-child::before { background: var(--navy); }
+  .kpi-card:nth-child(2)::before { background: var(--gold); }
+  .kpi-card:nth-child(3)::before { background: var(--navy-mid); }
+
+  .kpi-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .kpi-label {
+    font-size: 11px;
+    color: #5a6a85;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+
+  .context-footer {
+    text-align: center;
+    padding: 32px;
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    line-height: 1.8;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  /* SLIDE 3 — MACRO */
+  #slide3 {
+    background: #0d1b35;
+    background-image: radial-gradient(ellipse 60% 70% at 100% 50%, rgba(184,149,42,0.04) 0%, transparent 60%);
+  }
+
+  .scenarios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .scenario-card {
+    padding: 40px;
+    position: relative;
+  }
+
+  .scenario-card.base {
+    background: rgba(15,32,68,0.8);
+    border: 1px solid rgba(26,50,96,0.6);
+  }
+
+  .scenario-card.alt {
+    background: rgba(30,20,5,0.6);
+    border: 1px solid rgba(184,149,42,0.2);
+  }
+
+  .scenario-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-bottom: 28px;
+  }
+
+  .scenario-label.base {
+    background: var(--navy);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .scenario-label.alt {
+    background: rgba(184,149,42,0.15);
+    color: var(--gold-light);
+    border: 1px solid rgba(184,149,42,0.3);
+  }
+
+  .scenario-prob {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0.6;
+    margin-left: 8px;
+  }
+
+  .scenario-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    line-height: 1.2;
+  }
+
+  .scenario-card.base .scenario-headline { color: #7aa8ff; }
+  .scenario-card.alt .scenario-headline { color: var(--gold-light); }
+
+  .scenario-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .scenario-items li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .scenario-items li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--slate);
+  }
+
+  /* SLIDE 4 — FUNDS */
+  #slide4 {
+    background: var(--cream);
+    color: var(--text-dark);
+    padding-top: 120px;
+  }
+
+  #slide4 .slide-tag { color: var(--gold); }
+  #slide4 .slide-title { color: var(--navy); }
+
+  .funds-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .funds-table thead tr {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .funds-table thead th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .funds-table tbody tr {
+    border-bottom: 1px solid rgba(15,32,68,0.08);
+    transition: background 0.15s;
+  }
+
+  .funds-table tbody tr:hover { background: rgba(15,32,68,0.03); }
+
+  .funds-table tbody td {
+    padding: 22px 20px;
+    vertical-align: middle;
+  }
+
+  .fund-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1;
+    width: 40px;
+  }
+
+  .fund-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+
+  .fund-aum {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .fund-scenario {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .fund-scenario.both { background: rgba(15,32,68,0.08); color: var(--navy); }
+  .fund-scenario.base { background: rgba(184,149,42,0.1); color: #8a6a10; }
+  .fund-scenario.alt { background: rgba(90,106,133,0.12); color: #5a6a85; }
+
+  .fund-why {
+    font-size: 12px;
+    color: #6a7a95;
+    line-height: 1.5;
+    max-width: 280px;
+  }
+
+  /* SLIDE 5 — CLIENT TARGETING */
+  #slide5 {
+    background: var(--navy);
+  }
+
+  .aum-bar-wrap {
+    margin-bottom: 48px;
+  }
+
+  .aum-bar-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 12px;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .aum-bar {
+    display: flex;
+    height: 32px;
+    border-radius: 2px;
+    overflow: hidden;
+    gap: 2px;
+  }
+
+  .bar-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    transition: opacity 0.2s;
+  }
+
+  .seg-fof { background: var(--navy-mid); flex: 60; }
+  .seg-trading { background: #2d5a8e; flex: 15; }
+  .seg-retail { background: #4a7db5; flex: 10; }
+  .seg-sfo { background: var(--gold); flex: 7; }
+  .seg-pb { background: #8a9ab5; flex: 5; }
+  .seg-other { background: #c4cdd9; flex: 3; }
+
+  .bar-legend {
+    display: flex;
+    gap: 24px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--slate);
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .client-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .client-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .client-card:nth-child(1)::before { background: #4a7db5; }
+  .client-card:nth-child(2)::before { background: var(--gold); }
+  .client-card:nth-child(3)::before { background: #8a9ab5; }
+
+  .priority-badge {
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .client-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .client-stat {
+    font-size: 11px;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+  }
+
+  .client-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .client-funds {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* SLIDE 6 — BUSINESS CASE */
+  #slide6 {
+    background: var(--cream);
+    color: var(--text-dark);
+  }
+
+  #slide6 .slide-tag { color: var(--gold); }
+  #slide6 .slide-title { color: var(--navy); }
+
+  .bc-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .bc-chart {
+    position: relative;
+  }
+
+  .bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    height: 260px;
+    padding-bottom: 40px;
+    position: relative;
+  }
+
+  .bar-chart::before {
+    content: '';
+    position: absolute;
+    bottom: 40px; left: 0; right: 0;
+    height: 1px;
+    background: rgba(15,32,68,0.1);
+  }
+
+  .chart-bar-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .chart-bar {
+    width: 100%;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    transition: opacity 0.2s;
+  }
+
+  .chart-bar.current { background: #8a9ab5; height: 42%; }
+  .chart-bar.base-26 { background: var(--navy); height: 67%; }
+  .chart-bar.alt-26 { background: #4a7db5; height: 56%; }
+  .chart-bar.amb-27 { background: var(--gold); height: 100%; }
+
+  .chart-bar-val {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .chart-bar-label {
+    font-size: 10px;
+    color: #8a9ab5;
+    text-align: center;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  .chart-source {
+    font-size: 10px;
+    color: #a0aab8;
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  .kpi-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .kpi-table tr {
+    border-bottom: 1px solid rgba(15,32,68,0.08);
+  }
+
+  .kpi-table tr:first-child {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .kpi-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .kpi-table td {
+    padding: 14px 16px;
+    font-size: 12px;
+    color: #4a5a75;
+    vertical-align: middle;
+  }
+
+  .kpi-table td:last-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .kpi-highlight td:last-child {
+    color: var(--gold);
+  }
+
+  /* SLIDE 7 — CONCLUSION */
+  #slide7 {
+    background: var(--navy);
+    background-image:
+      radial-gradient(ellipse 50% 80% at 100% 50%, rgba(184,149,42,0.05) 0%, transparent 60%);
+  }
+
+  .asks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 800px;
+  }
+
+  .ask-item {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .ask-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .ask-content {}
+
+  .ask-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .ask-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+  }
+
+  .conclusion-footer {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(184,149,42,0.3);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .footer-stat {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .footer-dot {
+    color: rgba(184,149,42,0.4);
+    font-size: 14px;
+    margin: 0 4px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .slide > * {
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .slide > *:nth-child(2) { animation-delay: 0.1s; }
+  .slide > *:nth-child(3) { animation-delay: 0.2s; }
+  .slide > *:nth-child(4) { animation-delay: 0.3s; }
+
+  /* SLIDE NUMBER */
+  .slide-number {
+    position: absolute;
+    bottom: 32px;
+    right: 48px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.15);
+    font-weight: 300;
+  }
+
+  #slide2 .slide-number, #slide4 .slide-number, #slide6 .slide-number {
+    color: rgba(15,32,68,0.15);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .slide { padding: 80px 40px 60px; }
+    .kpi-grid { grid-template-columns: 1fr; }
+    .scenarios-grid { grid-template-columns: 1fr; }
+    .clients-grid { grid-template-columns: 1fr; }
+    .bc-layout { grid-template-columns: 1fr; }
+    nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#slide1">Cover</a>
+  <a href="#slide2">Context</a>
+  <a href="#slide3">Macro</a>
+  <a href="#slide4">Funds</a>
+  <a href="#slide5">Clients</a>
+  <a href="#slide6">Business Case</a>
+  <a href="#slide7">Conclusion</a>
+</nav>
+
+<!-- SLIDE 1 — COVER -->
+<section class="slide" id="slide1">
+  <div class="cover-eyebrow">Edmond de Rothschild Asset Management</div>
+  <div class="cover-title">Germany<br><span>Sales Strategy</span><br>2026</div>
+  <div class="cover-divider"></div>
+  <div class="cover-team">
+    <div class="team-names">
+      <div class="team-name">Flore Jaskulké</div>
+      <div class="team-name">Paul César Bensemoun</div>
+    </div>
+    <div class="team-names">
+      <div class="team-name">Sulian Brouard-Heulluy</div>
+      <div class="team-name">Vadim Capton</div>
+    </div>
+  </div>
+  <div class="cover-gold-bar"></div>
+  <div class="slide-number">01 / 07</div>
+</section>
+
+<!-- SLIDE 2 — CONTEXT -->
+<section class="slide" id="slide2">
+  <div class="slide-tag">Context</div>
+  <div class="slide-title">An underexploited market</div>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-number">€315M</div>
+      <div class="kpi-label">EdRAM AUM in Germany<br>(December 2025)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-number">€1 000B</div>
+      <div class="kpi-label">Merz fiscal stimulus<br>(defense + infrastructure)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-number">2.9%</div>
+      <div class="kpi-label">EdRAM market penetration<br>in Germany</div>
+    </div>
+  </div>
+  <div class="context-footer">
+    Germany is EdRAM's least penetrated market in Europe — for the world's 4th largest economy.<br>
+    The Merz plan and ECB rate normalisation create a rare entry window.
+  </div>
+  <div class="slide-number" style="color:rgba(15,32,68,0.15)">02 / 07</div>
+</section>
+
+<!-- SLIDE 3 — MACRO -->
+<section class="slide" id="slide3">
+  <div class="slide-tag">Macro</div>
+  <div class="slide-title">2 scenarios</div>
+  <div class="scenarios-grid">
+    <div class="scenario-card base">
+      <div class="scenario-label base">Base case <span class="scenario-prob">~65%</span></div>
+      <div class="scenario-headline">European recovery —<br>Germany leads</div>
+      <ul class="scenario-items">
+        <li>Merz stimulus kicks in (defense 2026, infrastructure 2027)</li>
+        <li>German GDP rebounds to +1.2 / +1.5%</li>
+        <li>ECB cuts rates 1 to 2 more times</li>
+        <li>Eurozone earnings: +11% (consensus)</li>
+        <li>Credit spreads tight — carry strategies deliver</li>
+        <li>Capital Markets Union boosts European equity flows</li>
+      </ul>
+    </div>
+    <div class="scenario-card alt">
+      <div class="scenario-label alt">Alternative case <span class="scenario-prob">~35%</span></div>
+      <div class="scenario-headline">AI bubble bursts —<br>Europe benefits</div>
+      <ul class="scenario-items">
+        <li>US MAG7 correction (&gt;–20%) — global rotation to Europe</li>
+        <li>EUR/USD appreciates to 1.20–1.30</li>
+        <li>ECB forced to cut more aggressively</li>
+        <li>Flight to quality: EUR credit, gold, defensives</li>
+        <li>European Small Caps re-rated upward</li>
+        <li>Global portfolio flows shift toward eurozone</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">03 / 07</div>
+</section>
+
+<!-- SLIDE 4 — FUND SELECTION -->
+<section class="slide" id="slide4">
+  <div class="slide-tag">Fund Selection</div>
+  <div class="slide-title">Five funds, one reason each</div>
+  <table class="funds-table">
+    <thead>
+      <tr>
+        <th>N°</th>
+        <th>Fund</th>
+        <th>Germany AUM</th>
+        <th>Scenario</th>
+        <th>Why now?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="fund-num">1</div></td>
+        <td><div class="fund-name">EdR SICAV – Financial Bonds</div></td>
+        <td><div class="fund-aum">€202.8M</div></td>
+        <td><span class="fund-scenario both">Base + Alt.</span></td>
+        <td><div class="fund-why">Our anchor in Germany. High carry, short duration. Works in both scenarios.</div></td>
+      </tr>
+      <tr>
+        <td><div class="fund-num">2</div></td>
+        <td><div class="fund-name">EdR Fund Big Data</div></td>
+        <td><div class="fund-aum">€65.0M</div></td>
+        <td><span class="fund-scenario base">Base</span></td>
+        <td><div class="fund-why">EdRAM's flagship thematic. German clients understand the digital transformation story.</div></td>
+      </tr>
+      <tr>
+        <td><div class="fund-num">3</div></td>
+        <td><div class="fund-name">EDR SICAV – Corporate Hybrid Bonds</div></td>
+        <td><div class="fund-aum">€0.8M</div></td>
+        <td><span class="fund-scenario both">Base + Alt.</span></td>
+        <td><div class="fund-why">Biggest untapped potential. HY yield, IG quality. Perfect for clients leaving the Sparbuch.</div></td>
+      </tr>
+      <tr>
+        <td><div class="fund-num">4</div></td>
+        <td><div class="fund-name">EdR SICAV – Euro Sustainable Equity</div></td>
+        <td><div class="fund-aum">€3.1M</div></td>
+        <td><span class="fund-scenario base">Base</span></td>
+        <td><div class="fund-why">BaFin ESG pressure. Strong cultural alignment. Institutional mandates to capture.</div></td>
+      </tr>
+      <tr>
+        <td><div class="fund-num">5</div></td>
+        <td><div class="fund-name">EdR Fund Bond Allocation</div></td>
+        <td><div class="fund-aum">€34.3M</div></td>
+        <td><span class="fund-scenario alt">Alt.</span></td>
+        <td><div class="fund-why">Entry product for Sparkassen. Simple, readable, suited for conservative profiles.</div></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="slide-number" style="color:rgba(15,32,68,0.15)">04 / 07</div>
+</section>
+
+<!-- SLIDE 5 — CLIENT TARGETING -->
+<section class="slide" id="slide5">
+  <div class="slide-tag">Client Targeting</div>
+  <div class="slide-title">Who to approach, and in what order</div>
+  <div class="aum-bar-wrap">
+    <div class="aum-bar-label">Current Germany AUM breakdown — €315M (December 2025 data)</div>
+    <div class="aum-bar">
+      <div class="bar-seg seg-fof">60%</div>
+      <div class="bar-seg seg-trading"></div>
+      <div class="bar-seg seg-retail"></div>
+      <div class="bar-seg seg-sfo"></div>
+      <div class="bar-seg seg-pb"></div>
+      <div class="bar-seg seg-other"></div>
+    </div>
+    <div class="bar-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#1a3260"></div>FoF / AM</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#2d5a8e"></div>Trading</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#4a7db5"></div>Retail</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#b8952a"></div>SFO</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#8a9ab5"></div>PB</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#c4cdd9"></div>Other</div>
+    </div>
+  </div>
+  <div class="clients-grid">
+    <div class="client-card">
+      <div class="priority-badge">Priority 01</div>
+      <div class="client-name">Fund of Funds & AM</div>
+      <div class="client-stat">DWS, Union Investment, Deka</div>
+      <div class="client-desc">The challenge is not acquisition, but expansion. The objective is to increase our share of wallet by positioning Financial Bonds as the core, and leveraging Big Data as a differentiating satellite.</div>
+      <div class="client-funds">Financial Bonds + Big Data</div>
+    </div>
+    <div class="client-card">
+      <div class="priority-badge">Priority 02</div>
+      <div class="client-name">Single Family Offices</div>
+      <div class="client-stat">300+ SFOs in Germany, only €22M AUM</div>
+      <div class="client-desc">This segment is particularly receptive to differentiated strategies backed by a proven track record. Given our limited presence today, this represents a strong opportunity for rapid conversion.</div>
+      <div class="client-funds">Corp. Hybrid Bonds + ESG Equity</div>
+    </div>
+    <div class="client-card">
+      <div class="priority-badge">Priority 03</div>
+      <div class="client-name">Sparkassen & Volksbanken</div>
+      <div class="client-stat">370 savings banks, €1,400Bn in client assets</div>
+      <div class="client-desc">Today, there is no EdRAM penetration, and open architecture is only starting to emerge. The right approach is to enter through simple and transparent bond allocation, and then gradually move up the value chain.</div>
+      <div class="client-funds">Bond Allocation (entry)</div>
+    </div>
+  </div>
+  <div class="slide-number">05 / 07</div>
+</section>
+
+<!-- SLIDE 6 — BUSINESS CASE -->
+<section class="slide" id="slide6">
+  <div class="slide-tag">Business Case</div>
+  <div class="slide-title">The commercial ambition in numbers</div>
+  <div class="bc-layout">
+    <div class="bc-chart">
+      <div class="bar-chart">
+        <div class="chart-bar-wrap">
+          <div class="chart-bar current"><div class="chart-bar-val">€315M</div></div>
+          <div class="chart-bar-label">Current<br>Dec. 2025</div>
+        </div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar base-26"><div class="chart-bar-val">€500M</div></div>
+          <div class="chart-bar-label">2026<br>Base case</div>
+        </div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar alt-26"><div class="chart-bar-val">€420M</div></div>
+          <div class="chart-bar-label">2026<br>Alt. case</div>
+        </div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar amb-27"><div class="chart-bar-val">€750M</div></div>
+          <div class="chart-bar-label">2027<br>Ambition</div>
+        </div>
+      </div>
+      <div class="chart-source">Sources: EdRAM December 2025 data · House View H1 2026 · market estimates</div>
+    </div>
+    <div>
+      <table class="kpi-table">
+        <thead>
+          <tr><th>KPI</th><th>Target</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Current AUM (Dec. 2025)</td><td>€315M</td></tr>
+          <tr><td>Target end 2026 — base case</td><td>€500M</td></tr>
+          <tr><td>Target end 2026 — alt. case</td><td>€420M</td></tr>
+          <tr><td>Ambition end 2027</td><td>€750M</td></tr>
+          <tr><td>New client relationships</td><td>+15 to 20</td></tr>
+          <tr><td>Market penetration (TAM ~€11Bn)</td><td>2.9% → 4.5%</td></tr>
+          <tr><td>Priority fund AUM uplift</td><td>+€185M</td></tr>
+          <tr class="kpi-highlight"><td>Additional revenues (50bps avg.)</td><td>+€925K/yr</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="slide-number" style="color:rgba(15,32,68,0.15)">06 / 07</div>
+</section>
+
+<!-- SLIDE 7 — CONCLUSION -->
+<section class="slide" id="slide7">
+  <div class="slide-tag">What we're asking for</div>
+  <div class="asks-list">
+    <div class="ask-item">
+      <div class="ask-num">1</div>
+      <div class="ask-content">
+        <div class="ask-title">A dedicated Germany Sales Manager</div>
+        <div class="ask-desc">Based in Frankfurt or Berlin. The German market cannot be developed from Paris.</div>
+      </div>
+    </div>
+    <div class="ask-item">
+      <div class="ask-num">2</div>
+      <div class="ask-content">
+        <div class="ask-title">A 12-month roadshow — 5 cities</div>
+        <div class="ask-desc">Frankfurt · Munich · Berlin · Hamburg · Düsseldorf. Target: 40 meetings, 15 prospects.</div>
+      </div>
+    </div>
+    <div class="ask-item">
+      <div class="ask-num">3</div>
+      <div class="ask-content">
+        <div class="ask-title">Financial Bonds & Hybrids as flagship products</div>
+        <div class="ask-desc">From €203M to €350M on these two funds in 12 months.</div>
+      </div>
+    </div>
+    <div class="ask-item">
+      <div class="ask-num">4</div>
+      <div class="ask-content">
+        <div class="ask-title">A Germany-specific ESG narrative</div>
+        <div class="ask-desc">BaFin regulatory pressure is an opportunity. Our Sustainable range is ready.</div>
+      </div>
+    </div>
+  </div>
+  <div class="conclusion-footer">
+    <span class="footer-stat">€315M today</span>
+    <span class="footer-dot">·</span>
+    <span class="footer-stat">€750M end 2027</span>
+    <span class="footer-dot">·</span>
+    <span class="footer-stat">The time is now.</span>
+  </div>
+  <div class="slide-number">07 / 07</div>
+</section>
+
+</body>
+</html>
